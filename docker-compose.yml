@@ -4,7 +4,7 @@ services:
   # PostgreSQL
   postgres:
     container_name: postgres
-    build: ./back/postgres
+    build: ./smartbrain/server/postgres
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
@@ -21,16 +21,16 @@ services:
     ports:
       - "6379:6379"
 
-  # Backend
-  smart-brain-api:
+  # Backend Server
+  smartbrain-server:
     # env_file:
     #   - ./.private/api-keys.env "Another way to insert env variables"
-    container_name: backend
-    build: ./back/
+    container_name: server
+    build: ./smartbrain/server/
     volumes:
-      - ./back/:/usr/src/smart-brain-api
+      - ./smartbrain/server/:/smartbrain/server
     command: npm start
-    working_dir: /usr/src/smart-brain-api
+    working_dir: /smartbrain/server
     ports:
       - "3001:3001"
     environment:
@@ -38,21 +38,18 @@ services:
       REDIS_URI: redis://redis:6379
 
 
-  # Frontend
-  smart-brain:
+  # Frontend Client
+  smartbrain-client:
     # env_file:
     #   - ./.private/api-keys.env "Another way to insert env variables"
-    container_name: frontend
-    build: ./front/
+    container_name: client
+    build: ./smartbrain/client/
     volumes:
-      - ./front/:/usr/src/smart-brain
+      - ./smartbrain/client/:/smartbrain/client
     command: npm start
-    working_dir: /usr/src/smart-brain
+    working_dir: /smartbrain/client
     ports:
       - "3000:3000"
-    # environment:
-      # POSTGRES_URI: postgres://admin:password@postgres:5432/smart-brain
-      # REDIS_URI: redis://redis:6379
 
     # Heads up! Docker has updated this feature and now you don't need to define the links property in order for things to work - https://docs.docker.com/compose/networking/
     # links:
