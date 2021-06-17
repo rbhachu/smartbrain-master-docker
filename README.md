@@ -1,30 +1,30 @@
 <h1 align="center">SmartBrain Master 'Dockererized' (Front-End Client + Back-End Server) </h1>
 <br>
 
-
 ## Description
-<p>
-Fully 'Dockerised' version of both Client and Server SmartBrain repos, merged into a single self contained Docker container with a PostgreSQL and Redis Database.
-<br><br>
 
-original seperate dedicated repos here<br>
-**master client:** https://github.com/rbhachu/smartbrain-frontend-jwt<br>
-**master server:** https://github.com/rbhachu/smartbrain-backend-jwt<br>
+<p>
+Fully 'Dockerised' version of both Client and Server SmartBrain repos, merged into a single self contained Docker container including a PostgreSQL and Redis Database.
+<br>
+
+_Original separate dedicated repos_<br>
+_**SmartBrain Master Client:** https://github.com/rbhachu/smartbrain-frontend-jwt_<br>
+_**SmartBrain Master Server:** https://github.com/rbhachu/smartbrain-backend-jwt_<br>
 </p>
 <br>
 
 
-## Installation Prequisites
+## Installation Prerequisites
 <p>
 
 ### Docker Desktop
-To run the container locally, you will need to have Docker Desktop installed on your computor.<br>
-Download Link: https://www.docker.com/products/docker-desktop
+To run the Docker container locally, you will need to have Docker Desktop installed on your computer.<br>
+_Download Link: https://www.docker.com/products/docker-desktop_
 <br><br>
 
 ### Clarafai API Key
 You will also need a Clarafai API Key (free) which gives access to the face detection api component.<br>
-Download Link:  https://www.clarifai.com/models/ai-face-detection
+_Download Link: https://www.clarifai.com/models/ai-face-detection_
 </p>
 <br>
 
@@ -33,119 +33,149 @@ Download Link:  https://www.clarifai.com/models/ai-face-detection
 <ul>
 
 <li>
--Start Docker Desktop
+Start Docker Desktop
 </li>
 
 <li>
--open terminal software (VS code etc)
+Open your terminal software client (VS code etc)
 </li>
 
 <li>
--clone the repo to download it
+Clone the SmartBrain Master Docker repo to download it;
 
-````sh
-git clone https://github.com/rbhachu/smartbrain-backend-docker.git
-````
+```sh
+git clone https://github.com/rbhachu/smartbrain-master-docker.git
+```
+
 </li>
 
 <li>
--cd into newly downloaded repo directory
+'CD' into newly downloaded repo directory
 </li>
 
 <li>
--open the .env file in the root of site
+Open the .env file in the root of site
 </li>
 
 <li>
--add your clarafai api key
-example: 
+Add your Clarifai API Key to the .env file;
 
-````env
+```env
 API_CLARIFAI=xxxxxxxxx
-````
+```
+
 </li>
 
 <li>
--Then save the .env file
+Save the .env file
 </li>
 
 <li>
--run the following command in your terminal (ensuring your in the root directory of the repo)
+Run the following command in your terminal client (ensuring your in the root directory of the repo)
 
-````sh
+```sh
 docker-compose up --build
-````
+```
 </li>
-
 </ul>
 
-<p>
-Now grab a cup of tea or coffee, as this will take a few mins
 
-*add emoji*
-<br><br>
-Once complete you should see confirmation in your terminal output similar to below, check for and error messages
+<p>
+
+*Now grab a cup of tea or coffee, as it will take a few mins to create the Docker container in Docker Desktop* ☕☕☕
+
+<br>
+Once complete you should see confirmation in your terminal output similar to below (check for any error messages)
 <br>
 
-*show terminal code output*
+_show terminal code output_
+
+
 <br><br>
 Your Docker Desktop should also show the SmartBrain-Master-Docker Container and its Images (client, server, redis and postgresql), as below example;
 <br>
+
+_show docker desktop image_
+
 </p>
 <br>
 
 
 ## Testing
+
 <p>
 Next, check the following links in your web browser load with no issues;<br>
 
 **Client Front-End:** http://localhost:3000<br>
-**Server-Back-End:** http://localhost:3001<br>
-*get screenshots from master repo*<br>
+**Server Back-End:** http://localhost:3001<br>
+
+_get screenshots from master repo_
+
 <br><br>
 Then test the signin form with the following test login details<br>
 email: a@a.com<br>
 password: a<br>
 
-*get screenshots from master repo*<br>
+_get screenshots from master repo_<br>
 <br>
-If succesful, continue on to a test an image;<br>
+If successful, continue on to a test an image;<br>
 Get an image from the web or use the test image link below and paste it into the upload field and click detect<br>
-test image: https://rbhachu-smartbrain-f-master.herokuapp.com/test-image.jpg<br>
 
-*get screenshots from master repo*<br>
-<br>
-if succesful, you should be able to login and see the followign on the page<br>
+_**test image:** https://rbhachu-smartbrain-f-master.herokuapp.com/test-image.jpg_<br>
 
-*get screenshots from master repo*<br>
-<br>
-Finally, logout, then register as a new user and you should automatically be signed in
+_get screenshots from master repo_
 
-*get screenshots from master repo*<br>
 <br>
-if you have managed to get this far with no issues, thats great, if not, check docker desktop is running the container and all 4 images (client, server, postgresql and redis) without any issues, otherwise also check the browser for any console errrors that may appear.
-<br>
+If successful, you should be able to login and see the following on the page<br>
 
-*add link to top of master smartbrain client and server for, fully dockerized version here?*
+_get screenshots from master repo_
+
+<br>
+Finally, Sign-Out, then Register as a new user to test its working too.<br>
+
+_get screenshots from master repo_
+
+<br>
+If you have no issues, you have successfully deployed and run a Docker Container running a fully functioning React App with a API, PostgreSQL and Redis Databases, so give yourself a pat on the back! 👏
+
 </p>
 <br>
 
 
 ## Issues
+
 <p>
-If you encounter any issues, check the console in your browser, and also check your values for Clarifai API Key, PostgreSQL and Redis connection strings in the .env file are correct too.
+If you encounter any issues, check the following;
+
+<ul>
+
+<li>
+Is Docker Desktop running the SmartBrain Docker Container, with all 4 images (Client, Server, PostgreSQL and Redis) without any issues?
+</li>
+
+<li>
+Are there any errors being reported for the Client and Server pages in the console?
+</li>
+
+<li>
+Have you added the correct key in the .env file for Clarafai API?
+</li>
+
+</ul>
+
 <br><br> 
-If you continue to have issues, please drop me a message via LinkedIn and I will try to help you resolve the issue.
+If you still continue to experience issues deploying and running the Docker container please drop me a message via LinkedIn and I will try to help.
 </p>
 <br>
 
 
 ## Author
+
 👤 **Rishi Singh Bhachu**<br>
 Contact me via [LinkedIn](https://www.linkedin.com/in/rishisinghbhachu/)
 <br><br>
 
-
 ## Show your support
+
 <p>
 If you liked this project it would be greatly appreciated to show your support by simply giving this repo a ⭐️ rating too, many thanks!</p>
