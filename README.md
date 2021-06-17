@@ -1,35 +1,39 @@
-<h1 align="center">SmartBrain Master 'Dockererized' (Front-End Client + Back-End Server) </h1>
+<h1 align="center">SmartBrain Master Fully `Dockererized` (Front-End Client + Back-End Server) </h1>
 <br>
 
 ## Description
 
 <p>
-Fully 'Dockerised' version of both Client and Server SmartBrain repos, merged into a single self contained Docker container including a PostgreSQL and Redis Database.
+Fully `Dockerised` version of both Client and Server SmartBrain repos, merged into a single self contained Docker container including a PostgreSQL and Redis Databases.
 <br>
 
-_Original separate dedicated repos_<br>
+_Original separate dedicated repos;_<br>
 _**SmartBrain Master Client:** https://github.com/rbhachu/smartbrain-frontend-jwt_<br>
 _**SmartBrain Master Server:** https://github.com/rbhachu/smartbrain-backend-jwt_<br>
+
 </p>
 <br>
 
-
 ## Installation Prerequisites
+
 <p>
 
 ### Docker Desktop
+
 To run the Docker container locally, you will need to have Docker Desktop installed on your computer.<br>
-_Download Link: https://www.docker.com/products/docker-desktop_
+_**Download Link:** https://www.docker.com/products/docker-desktop_
 <br><br>
 
-### Clarafai API Key
-You will also need a Clarafai API Key (free) which gives access to the face detection api component.<br>
-_Download Link: https://www.clarifai.com/models/ai-face-detection_
+### Clarifai API Key
+
+You will also need a Clarifai API Key (free) which gives access to the face detection API component.<br>
+_**Download Link:** https://www.clarifai.com/models/ai-face-detection_
+
 </p>
 <br>
 
-
 ## Installation
+
 <ul>
 
 <li>
@@ -41,12 +45,11 @@ Open your terminal software client (VS code etc)
 </li>
 
 <li>
-Clone the SmartBrain Master Docker repo to download it;
+Clone the SmartBrain Master Docker repo to download it to your local computer;
 
 ```sh
 git clone https://github.com/rbhachu/smartbrain-master-docker.git
 ```
-
 </li>
 
 <li>
@@ -63,7 +66,6 @@ Add your Clarifai API Key to the .env file;
 ```env
 API_CLARIFAI=xxxxxxxxx
 ```
-
 </li>
 
 <li>
@@ -76,76 +78,71 @@ Run the following command in your terminal client (ensuring your in the root dir
 ```sh
 docker-compose up --build
 ```
+
 </li>
 </ul>
 
-
 <p>
 
-*Now grab a cup of tea or coffee, as it will take a few mins to create the Docker container in Docker Desktop* ☕☕☕
-
-<br>
-Once complete you should see confirmation in your terminal output similar to below (check for any error messages)
+_**Now grab a cup of tea or coffee, as it will take a few minutes to create the Docker container and images in Docker Desktop**_ ☕
 <br>
 
-_show terminal code output_
-
-
-<br><br>
-Your Docker Desktop should also show the SmartBrain-Master-Docker Container and its Images (client, server, redis and postgresql), as below example;
+Once complete you should see confirmation of successful deployment in your terminal output.
 <br>
 
-_show docker desktop image_
+Your Docker Desktop should also show the SmartBrain-Master-Docker Container and its Images (Client, Server, Redis and PostgreSQL), as per below example;
+<br>
 
+![Docker Desktop Containers](./imgs-readme/docker1.png)
+![Docker Desktop Images](./imgs-readme/docker2.png)
 </p>
 <br>
 
 
 ## Testing
-
 <p>
-Next, check the following links in your web browser load with no issues;<br>
+Check the following links in your web browser load with no issues;<br>
 
 **Client Front-End:** http://localhost:3000<br>
 **Server Back-End:** http://localhost:3001<br>
 
-_get screenshots from master repo_
+![Client Front-End](./imgs-readme/site-preview-front.png)
+![Server Back-End](./imgs-readme/site-preview-back.png)
 
-<br><br>
-Then test the signin form with the following test login details<br>
-email: a@a.com<br>
-password: a<br>
-
-_get screenshots from master repo_<br>
 <br>
-If successful, continue on to a test an image;<br>
-Get an image from the web or use the test image link below and paste it into the upload field and click detect<br>
+Then test the Sign-In form with the following test login details;<br>
+<b>user:</b> a@a.com
+<br>
+<b>password:</b> a
+
+![Login](./imgs-readme/login.png)
+
+<br>
+If successful, continue on to a test an image;<br><br>
+
+_Get an image from the web or use the test image link below and paste it into the upload field and click detect_<br>
 
 _**test image:** https://rbhachu-smartbrain-f-master.herokuapp.com/test-image.jpg_<br>
 
-_get screenshots from master repo_
-
-<br>
-If successful, you should be able to login and see the following on the page<br>
-
-_get screenshots from master repo_
+![Image Link](./imgs-readme/image-link.png)
+![Face Detection](./imgs-readme/face-detect.png)
 
 <br>
 Finally, Sign-Out, then Register as a new user to test its working too.<br>
 
-_get screenshots from master repo_
+![Register Tab](./imgs-readme/register.png)
+![Register New User](./imgs-readme/register-user.png)
 
 <br>
-If you have no issues, you have successfully deployed and run a Docker Container running a fully functioning React App with a API, PostgreSQL and Redis Databases, so give yourself a pat on the back! 👏
 
+**If you have no issues, you have successfully deployed a Docker Container with a fully functioning React App running an API, PostgreSQL and Redis Databases, so give yourself a pat on the back!** 👏
 </p>
 <br>
 
 
 ## Issues
-
 <p>
-If you encounter any issues, check the following;
+If however, you do encounter any issues, check the following;
 
 <ul>
 
@@ -158,24 +155,23 @@ Are there any errors being reported for the Client and Server pages in the conso
 </li>
 
 <li>
-Have you added the correct key in the .env file for Clarafai API?
+Have you added the correct key in the .env file for Clarifai API?
 </li>
 
 </ul>
 
-<br><br> 
+<br><br>
 If you still continue to experience issues deploying and running the Docker container please drop me a message via LinkedIn and I will try to help.
 </p>
 <br>
 
 
 ## Author
-
 👤 **Rishi Singh Bhachu**<br>
 Contact me via [LinkedIn](https://www.linkedin.com/in/rishisinghbhachu/)
 <br><br>
 
-## Show your support
 
+## Show your support
 <p>
 If you liked this project it would be greatly appreciated to show your support by simply giving this repo a ⭐️ rating too, many thanks!</p>
