@@ -71,7 +71,7 @@ app.use(cors()); // use 'app.use' as is middleware
 //app.use(cors.json()); // use 'app.use' as is middleware
 app.use(bodyParser.json()); //bodyParser depricated
 
-app.get('/', (req, res)=> { res.send('it is working24!') }) // for testing
+app.get('/', (req, res)=> { res.send('SmartBrain-Backend-Master Running on port 3001') }) // for testing
 app.post('/signin', signin.signinAuthentication(db, bcrypt))
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
 app.get('/profile/:id', auth.requireAuth, (req, res) => { profile.handleProfileGet(req, res, db)})

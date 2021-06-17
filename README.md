@@ -1,4 +1,4 @@
-<h1 align="center">SmartBrain Master Fully `Dockererized` (Front-End Client + Back-End Server) </h1>
+<h1 align="center">SmartBrain Master Fully `Dockererized`<br>(Front-End Client + Back-End Server)</h1>
 <br>
 
 ## Description
@@ -26,7 +26,7 @@ _**Download Link:** https://www.docker.com/products/docker-desktop_
 
 ### Clarifai API Key
 
-You will also need a Clarifai API Key (free) which gives access to the face detection API component.<br>
+You will also need a Clarifai API Key (free) which gives access to the Face Detection API component.<br>
 _**Download Link:** https://www.clarifai.com/models/ai-face-detection_
 
 </p>
@@ -53,7 +53,7 @@ git clone https://github.com/rbhachu/smartbrain-master-docker.git
 </li>
 
 <li>
-'CD' into newly downloaded repo directory
+'CD' into the newly downloaded repo directory
 </li>
 
 <li>
@@ -73,7 +73,7 @@ Save the .env file
 </li>
 
 <li>
-Run the following command in your terminal client (ensuring your in the root directory of the repo)
+Run the following command in your terminal client (ensuring you are in the root directory of the repo)
 
 ```sh
 docker-compose up --build
@@ -83,14 +83,16 @@ docker-compose up --build
 </ul>
 
 <p>
+<br>
 
 _**Now grab a cup of tea or coffee, as it will take a few minutes to create the Docker container and images in Docker Desktop**_ ☕
+<br>
 <br>
 
 Once complete you should see confirmation of successful deployment in your terminal output.
 <br>
 
-Your Docker Desktop should also show the SmartBrain-Master-Docker Container and its Images (Client, Server, Redis and PostgreSQL), as per below example;
+Your Docker Desktop should also show the SmartBrain-Master-Docker Container and its respective Images (Client, Server, Redis and PostgreSQL), as per the example below;
 <br>
 
 ![Docker Desktop Containers](./imgs-readme/docker1.png)
@@ -109,20 +111,19 @@ Check the following links in your web browser load with no issues;<br>
 ![Client Front-End](./imgs-readme/site-preview-front.png)
 ![Server Back-End](./imgs-readme/site-preview-back.png)
 
-<br>
+
 Then test the Sign-In form with the following test login details;<br>
-<b>user:</b> a@a.com
+<b>Email:</b> a@a.com
 <br>
-<b>password:</b> a
+<b>Password:</b> a
 
 ![Login](./imgs-readme/login.png)
 
-<br>
 If successful, continue on to a test an image;<br><br>
 
 _Get an image from the web or use the test image link below and paste it into the upload field and click detect_<br>
 
-_**test image:** https://rbhachu-smartbrain-f-master.herokuapp.com/test-image.jpg_<br>
+_**Test Image:** https://rbhachu-smartbrain-f-master.herokuapp.com/test-image.jpg_<br>
 
 ![Image Link](./imgs-readme/image-link.png)
 ![Face Detection](./imgs-readme/face-detect.png)
@@ -135,7 +136,8 @@ Finally, Sign-Out, then Register as a new user to test its working too.<br>
 
 <br>
 
-**If you have no issues, you have successfully deployed a Docker Container with a fully functioning React App running an API, PostgreSQL and Redis Databases, so give yourself a pat on the back!** 👏
+**If you have no issues, you have successfully deployed a Docker Container with a fully functioning React App, running an API, PostgreSQL and Redis Databases.**<br> 
+**So give yourself a pat on the back!** 👏
 </p>
 <br>
 
@@ -151,7 +153,7 @@ Is Docker Desktop running the SmartBrain Docker Container, with all 4 images (Cl
 </li>
 
 <li>
-Are there any errors being reported for the Client and Server pages in the console?
+Are there any errors being reported for the Client and Server pages in the browser console (CTRL+SHIFT+I > Console Tab)?
 </li>
 
 <li>
@@ -160,7 +162,7 @@ Have you added the correct key in the .env file for Clarifai API?
 
 </ul>
 
-<br><br>
+<br>
 If you still continue to experience issues deploying and running the Docker container please drop me a message via LinkedIn and I will try to help.
 </p>
 <br>
