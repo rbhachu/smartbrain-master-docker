@@ -4,118 +4,140 @@
 
 ## Description
 <p>
-</p><br>
+Fully 'Dockerised' version of both Client and Server SmartBrain repos, merged into a single self contained Docker container with a PostgreSQL and Redis Database.
+<br><br>
 
-
-## Dependencies/NPM Modules
-[NodeMon: v2.0.7 *](https://www.npmjs.com/package/nodemon) - Node.js development tool
+original seperate dedicated repos here<br>
+**master client:** https://github.com/rbhachu/smartbrain-frontend-jwt<br>
+**master server:** https://github.com/rbhachu/smartbrain-backend-jwt<br>
+</p>
 <br>
 
+
+## Installation Prequisites
+<p>
+
+### Docker Desktop
+To run the container locally, you will need to have Docker Desktop installed on your computor.<br>
+Download Link: https://www.docker.com/products/docker-desktop
 <br><br>
 
-
-## Installation Prerequisites
-
-### Clarifai API Key
-You will need to obtain a free API key from Clarifai<br><br>
-API Key Link: https://www.clarifai.com/models/ai-face-detection
-<br><br>
+### Clarafai API Key
+You will also need a Clarafai API Key (free) which gives access to the face detection api component.<br>
+Download Link:  https://www.clarifai.com/models/ai-face-detection
+</p>
+<br>
 
 
-Once you have installed PostgreSQL Database, use the following SQL statements to create the Login, Users Tables and Seed them too.
-<br><br>
+## Installation
+<ul>
 
+<li>
+-Start Docker Desktop
+</li>
 
-Login Table SQL
-````sql
-BEGIN TRANSACTION;
+<li>
+-open terminal software (VS code etc)
+</li>
 
-CREATE TABLE login (
-    id serial PRIMARY KEY,
-    hash varchar(100) NOT NULL,
-    email text UNIQUE NOT NULL
-);
+<li>
+-clone the repo to download it
 
-COMMIT;
+````sh
+git clone https://github.com/rbhachu/smartbrain-backend-docker.git
 ````
+</li>
+
+<li>
+-cd into newly downloaded repo directory
+</li>
+
+<li>
+-open the .env file in the root of site
+</li>
+
+<li>
+-add your clarafai api key
+example: 
+
+````env
+API_CLARIFAI=xxxxxxxxx
+````
+</li>
+
+<li>
+-Then save the .env file
+</li>
+
+<li>
+-run the following command in your terminal (ensuring your in the root directory of the repo)
+
+````sh
+docker-compose up --build
+````
+</li>
+
+</ul>
+
+<p>
+Now grab a cup of tea or coffee, as this will take a few mins
+
+*add emoji*
 <br><br>
+Once complete you should see confirmation in your terminal output similar to below, check for and error messages
+<br>
 
-
-### Redis Database Installation
-You will need to install a local instance of Redis server for login authentication with JSON Web Tokens.
+*show terminal code output*
 <br><br>
-
-PostgreSQL Installation Guide: https://redislabs.com/blog/redis-on-windows-10/
-<br><br>
-
-Once you have completed the steps in the 'Installation Prerequisites' above you can continue on to the final installation steps below.
-<br><br>
-
-
-## Installation 
-<p>Open your Code Editor and 'CD' into your working directory, then download the repo to that location, by executing the following command in your terminal.<p>
-
-```sh
-git clone https://github.com/rbhachu/smartbrain-backend-jwt.git
-```
-
-<p>Once the repo has been downloaded, 'CD' to the newly downloaded project folder. Then execute the following command in your terminal.<p>
-
-```sh
-npm install
-```
-
-<p>Also check for any updates by running the following command too.<p>
-
-```sh
-npm update
-```
+Your Docker Desktop should also show the SmartBrain-Master-Docker Container and its Images (client, server, redis and postgresql), as below example;
+<br>
+</p>
 <br>
 
 
-## Configuration
-<p>There is a settings file in the root of the project folder called '.env' which is also known as the Environmental Variables file.
+## Testing
+<p>
+Next, check the following links in your web browser load with no issues;<br>
+
+**Client Front-End:** http://localhost:3000<br>
+**Server-Back-End:** http://localhost:3001<br>
+*get screenshots from master repo*<br>
 <br><br>
-We now need to update this file to use actual values <i>(remove brackets when you replace with actual values)</i> for API_CLARIFAI, POSTGRES_URL and REDIS_URL.
+Then test the signin form with the following test login details<br>
+email: a@a.com<br>
+password: a<br>
+
+*get screenshots from master repo*<br>
+<br>
+If succesful, continue on to a test an image;<br>
+Get an image from the web or use the test image link below and paste it into the upload field and click detect<br>
+test image: https://rbhachu-smartbrain-f-master.herokuapp.com/test-image.jpg<br>
+
+*get screenshots from master repo*<br>
+<br>
+if succesful, you should be able to login and see the followign on the page<br>
+
+*get screenshots from master repo*<br>
+<br>
+Finally, logout, then register as a new user and you should automatically be signed in
+
+*get screenshots from master repo*<br>
+<br>
+if you have managed to get this far with no issues, thats great, if not, check docker desktop is running the container and all 4 images (client, server, postgresql and redis) without any issues, otherwise also check the browser for any console errrors that may appear.
 <br>
 
-```env
-#SERVER PORT
-PORT=3001
-
-#JWT SECRET KEY VALUE
-JWT_SECRET=secret
-
-#CLARIFAI API KEY
-API_CLARIFAI=(your api key)
-
-#POSTGRESQL DB
-POSTGRES_URL=postgres://(<db_username>:<db_password><host_location:host_port>/<db_name>)
-
-#REDIS DB
-REDIS_URL=redis://:(<db_password><host_location>:<host_port>)
-```
+*add link to top of master smartbrain client and server for, fully dockerized version here?*
+</p>
 <br>
-
-
-## Deployment
-<p>Finally, to run the app, simply execute the following command in your terminal (ensuring you are in the correct project directory too).</p>
-
-```sh
-npm start
-```
-
-<p>After a few seconds, your browser should automatically open to the following link; http://localhost:3001 and display the following message in the browser.</p>
-
-![SmartBrain Preview](./imgs-readme/site-preview.png)
-<br><br>
 
 
 ## Issues
+<p>
 If you encounter any issues, check the console in your browser, and also check your values for Clarifai API Key, PostgreSQL and Redis connection strings in the .env file are correct too.
-<br> 
+<br><br> 
 If you continue to have issues, please drop me a message via LinkedIn and I will try to help you resolve the issue.
-<br><br>
+</p>
+<br>
 
 
 ## Author
@@ -125,4 +147,5 @@ Contact me via [LinkedIn](https://www.linkedin.com/in/rishisinghbhachu/)
 
 
 ## Show your support
-If you liked this project it would be greatly appreciated to show your support by simply giving this repo a ⭐️ rating too, many thanks!
+<p>
+If you liked this project it would be greatly appreciated to show your support by simply giving this repo a ⭐️ rating too, many thanks!</p>
