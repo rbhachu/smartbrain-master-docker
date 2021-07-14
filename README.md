@@ -6,7 +6,7 @@
 
 ----
 
-<h1 align="center">SmartBrain Docker v2 (Fully `Dockererized` Client + Server)</h1>
+<h1 align="center">SmartBrain Docker v2<br>(Fully `Dockererized` Client + Server)</h1>
 <br>
 
 ## Description
